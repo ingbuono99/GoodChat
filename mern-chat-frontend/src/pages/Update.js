@@ -31,10 +31,10 @@ function Update() {
     async function uploadImage() {
         const data = new FormData();
         data.append('file', image);
-        data.append("upload_preset", "qtehprwd");  //quello è l'id del preset di Cloudinary, si richiama l'API con upload_preset
+        data.append("upload_preset", "id_preset");  //quello è l'id del preset di Cloudinary, si richiama l'API con upload_preset
         try{
             setUploadingImg(true);
-            let res = await fetch('https://api.cloudinary.com/v1_1/webrtc/image/upload', {
+            let res = await fetch('https://api.cloudinary.com/v1_1/NAME/image/upload', {  //lì ci va l'id del nome su cloudinary
                 method: 'post',
                 body: data
             })
